@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavWrapper } from '../Button';
+import { NavWrapper } from '../Style/Button';
 
 export default class NavBar extends Component {
     render() {
@@ -24,19 +24,12 @@ export default class NavBar extends Component {
                 </ul>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
-                        <Link to='/test'>
-                            Test
-                        </Link>
-                    </li>
-                </ul>
-                <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
                         <Link to='/products'>
                             Products
                         </Link>
                     </li>
                 </ul>
-                <ul className="navbar-nav align-items-center">
+                {/* <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
                         <Link to='/alarmsetting'>
                             Set Alarm
@@ -49,7 +42,7 @@ export default class NavBar extends Component {
                             Statistics
                         </Link>
                     </li>
-                </ul>
+                </ul> */}
             </NavWrapper>
         )
     }

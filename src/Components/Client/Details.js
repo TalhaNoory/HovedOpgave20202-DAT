@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { ButtonContainer } from "../Button";
+import { ButtonContainer } from "../Style/Button";
 
 export default class Details extends Component {
   constructor(props) {
@@ -37,9 +37,9 @@ export default class Details extends Component {
     fetch(url, opts)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
+        // console.log(result)
         this.setState({
-          products: [result.data.Product]
+          product: [result.data.Product]
         });
       })
       .catch(console.error);

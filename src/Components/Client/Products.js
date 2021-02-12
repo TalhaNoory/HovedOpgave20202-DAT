@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
-import { ProductWrapper } from '../Button';
 import { Link } from 'react-router-dom';
+import { ProductWrapper } from '../Style/Button';
 
 export default class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            product: [],
-            id: "ckes849yz000101md82djen90"
+            product: []
         };
     };
 
     componentDidMount() {
         const query = `
-        query { 
-            Product(id:"${this.state.id}") {
+        query {
+            allProducts {
               id 
               producerId
               title 
               type 
               image 
-              category 
+              category
               unit
               unitSize
               bulkUnit
@@ -35,21 +34,21 @@ export default class Products extends Component {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query })
         };
-        console.log(opts.body)
         fetch(url, opts)
             .then(res => res.json())
             .then((result) => {
-                console.log(result)
+                this.setState({
+                    product: result.data.allProducts
+                })
             })
             .catch(console.error);
     };
 
     render() {
-
         return (
             <div>
                 {this.state.product !== undefined
-                    ? this.state.products.map((product) => (
+                    ? this.state.product.map((product) => (
                         <div key={product.id}>
                             <ProductWrapper
                                 className="col-9 mx-auto col-md-6 col-lg-3 my-3">

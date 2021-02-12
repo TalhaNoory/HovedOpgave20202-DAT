@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ProductWrapper } from '../Button';
+import { ProductWrapper } from '../Style/Button';
 
 export default class Users extends Component {
     constructor(props) {
@@ -45,7 +45,10 @@ export default class Users extends Component {
                                 <div className="card">
                                     {/* footer for the cart! */}
                                     <div className="card-footer d-flex justify-content-between">
-                                        {user.mail}
+                                        {user.name}
+                                    </div>
+                                    <div className="card-footer d-flex justify-content-between">
+                                        {user.role}
                                     </div>
                                 </div>
                             </ProductWrapper>
